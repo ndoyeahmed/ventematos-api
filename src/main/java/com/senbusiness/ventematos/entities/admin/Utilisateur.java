@@ -1,7 +1,6 @@
 package com.senbusiness.ventematos.entities.admin;
 
 import com.fasterxml.jackson.annotation.JsonFilter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.senbusiness.ventematos.entities.Auditable;
 import lombok.Data;
 
@@ -11,11 +10,11 @@ import java.util.List;
 @Entity
 @Data
 @JsonFilter("passwordFilter")
-public class Utilisateur  {
+public class Utilisateur extends Auditable<String> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    @Column(columnDefinition = "serial")
+    @Column(columnDefinition = "serial")
     private Long id;
     private String login;
     private String password;
