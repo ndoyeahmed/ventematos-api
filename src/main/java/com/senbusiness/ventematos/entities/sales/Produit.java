@@ -19,6 +19,8 @@ public class Produit extends Auditable<String> {
     private String libelle;
     private Integer quantiteStock;
     private String description;
+    @Lob
+    private String image;
     private Integer prixNormal;
     private Integer prixMinimal;
     private boolean archive;
